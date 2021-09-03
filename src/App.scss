@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin for-phone {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-small {
+    @media (max-width: 1500px) {
+        @content;
+    }
+}
+
+body {
+    background-color: #98C8DB;
+}
+
+.App {
+    font-family: 'Poppins', sans-serif;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    .App__image {
+        margin-top: 5em;
+        align-self: center;
+        width: 700px;
+        @include for-phone() {
+            width: 350px;
+        }
+    }
+}
